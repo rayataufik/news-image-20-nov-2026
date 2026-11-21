@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World Today — Friday 20 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1024px; height: 1024px; overflow: hidden;
+    font-family: "Helvetica Neue", Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+    background: #FAF5EC; color: #1C2420; }
+  /* ---------- header ---------- */
+  .header { height: 140px; background: #14352A; color: #FAF5EC;
+    display: flex; align-items: stretch; }
+  .datebox { width: 300px; padding: 8px 0 0 28px; border-right: 3px solid #E8A317; }
+  .datebox .big { font-size: 82px; font-weight: 900; line-height: 0.85; color: #E8A317; letter-spacing: -2px; }
+  .datebox .day { font-size: 24px; font-weight: 800; letter-spacing: 6px; margin-top: 2px; }
+  .datebox .mon { font-size: 15px; font-weight: 700; letter-spacing: 4px; color: #BFD8C6; }
+  .titlebox { flex: 1; padding: 22px 28px 0 28px; }
+  .titlebox h1 { font-size: 52px; font-weight: 900; letter-spacing: 1px; line-height: 1.0; }
+  .titlebox h1 span { color: #E8A317; }
+  .titlebox p { font-size: 17px; line-height: 1.35; color: #D8E4DA; margin-top: 8px; }
+  /* ---------- lead ---------- */
+  .lead { height: 282px; margin: 12px 20px 0 20px; background: #FFFDF6;
+    border: 2px solid #14352A; border-top: 10px solid #E8A317;
+    display: flex; overflow: hidden; }
+  .lead-text { width: 600px; padding: 16px 20px 0 20px; }
+  .kicker { font-size: 14px; font-weight: 800; letter-spacing: 3px; color: #A63A2A; }
+  .lead-text h2 { font-size: 33px; line-height: 1.08; font-weight: 900; margin-top: 6px; }
+  .lead-text p { font-size: 16px; line-height: 1.4; margin-top: 7px; color: #333E38; }
+  .chips { display: flex; gap: 10px; margin-top: 10px; }
+  .chip { background: #14352A; color: #FAF5EC; border-radius: 6px; padding: 6px 10px; text-align: center; }
+  .chip b { display: block; font-size: 20px; color: #E8A317; }
+  .chip span { font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+  .lead-art { flex: 1; background: #14352A; position: relative; }
+  .lead-art svg { display: block; width: 100%; height: 100%; }
+  .lead-art .cap { position: absolute; left: 12px; bottom: 10px; color: #FAF5EC;
+    font-size: 12.5px; font-weight: 700; letter-spacing: 1px; }
+  /* ---------- middle row ---------- */
+  .mid { display: flex; gap: 16px; margin: 12px 20px 0 20px; height: 224px; }
+  .panel { flex: 1; padding: 14px 18px 0 18px; overflow: hidden; }
+  .panel.red { background: #FBEFEA; border: 2px solid #A63A2A; border-top: 10px solid #A63A2A; }
+  .panel.green { background: #EAF2EA; border: 2px solid #14352A; border-top: 10px solid #14352A; }
+  .panel .kicker { font-size: 13px; }
+  .panel.green .kicker { color: #14352A; }
+  .panel h3 { font-size: 26px; font-weight: 900; line-height: 1.1; margin-top: 5px; }
+  .panel p { font-size: 15.5px; line-height: 1.42; margin-top: 7px; color: #333E38; }
+  .panel p b { color: #A63A2A; }
+  .panel.green p b { color: #14352A; }
+  .nums { display: flex; gap: 8px; margin-top: 10px; }
+  .num { flex: 1; background: #fff; border: 1.5px solid #D8CFC0; border-radius: 6px;
+    padding: 6px 4px; text-align: center; }
+  .num b { display: block; font-size: 19px; color: #A63A2A; }
+  .num span { font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; color: #5A665F; }
+  /* ---------- world grid ---------- */
+  .world { margin: 12px 20px 0 20px; }
+  .world h4 { font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #14352A;
+    border-bottom: 3px solid #E8A317; padding-bottom: 5px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+  .card { width: 312px; height: 92px; background: #FFFDF6; border: 1.5px solid #D8CFC0;
+    border-left: 8px solid #E8A317; padding: 9px 12px 0 12px; overflow: hidden; }
+  .card .tag { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #A63A2A; }
+  .card h5 { font-size: 17.5px; font-weight: 800; line-height: 1.15; margin-top: 2px; }
+  .card p { font-size: 13.5px; line-height: 1.32; color: #4A554F; margin-top: 3px; }
+  /* ---------- footer ---------- */
+  .footer { height: 74px; margin-top: 10px; background: #14352A; color: #FAF5EC;
+    padding: 9px 24px 0 24px; }
+  .footer .also { font-size: 14px; line-height: 1.45; }
+  .footer .also b { color: #E8A317; letter-spacing: 1px; }
+  .footer .src { font-size: 11.5px; color: #9DB8A6; margin-top: 5px; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="datebox">
+      <div class="big">20</div>
+      <div class="day">FRIDAY</div>
+      <div class="mon">NOVEMBER 2026</div>
+    </div>
+    <div class="titlebox">
+      <h1>THE WORLD <span>TODAY</span></h1>
+      <p>One Friday, five shocks: a barrage over Kyiv that spilled into Poland,
+      a Wall Street rout, climate talks running out of road, and tremors on two continents.</p>
+    </div>
+  </div>
+
+  <div class="lead">
+    <div class="lead-text">
+      <div class="kicker">LEAD STORY &nbsp;•&nbsp; UKRAINE</div>
+      <h2>Kyiv&rsquo;s bridges hit as Russia fires 400+ drones and 110 missiles</h2>
+      <p>An overnight barrage struck three bridges over the Dnipro and power plants
+      across Ukraine. Eight people were killed and 28 injured. Two Russian missiles
+      and a drone came down in Poland, a NATO member &mdash; no casualties there &mdash;
+      and nuclear plants had to cut output after grid damage.</p>
+      <div class="chips">
+        <div class="chip"><b>400+</b><span>DRONES</span></div>
+        <div class="chip"><b>110</b><span>MISSILES</span></div>
+        <div class="chip"><b>8</b><span>KILLED</span></div>
+        <div class="chip"><b>3</b><span>BRIDGES HIT</span></div>
+      </div>
+    </div>
+    <div class="lead-art">
+      <svg viewBox="0 0 360 296" xmlns="http://www.w3.org/2000/svg">
+        <rect width="360" height="296" fill="#14352A"/>
+        <circle cx="300" cy="52" r="26" fill="#E8A317" opacity="0.9"/>
+        <path d="M0 210 L360 210 L360 296 L0 296 Z" fill="#1E4A38"/>
+        <path d="M0 232 Q90 218 180 232 T360 232 L360 296 L0 296 Z" fill="#2A5C48"/>
+        <g stroke="#E8A317" stroke-width="5" fill="none">
+          <path d="M20 210 L20 150 M180 210 L180 120 M340 210 L340 150"/>
+          <path d="M20 150 L180 210 M180 120 L340 210 M20 150 L340 150" stroke-width="3"/>
+        </g>
+        <g stroke="#FAF5EC" stroke-width="4" fill="none">
+          <path d="M0 210 L360 210"/>
+        </g>
+        <g fill="#E4572E">
+          <circle cx="90" cy="180" r="14"/><circle cx="90" cy="180" r="24" fill="none" stroke="#E4572E" stroke-width="3"/>
+          <circle cx="260" cy="170" r="11"/><circle cx="260" cy="170" r="20" fill="none" stroke="#E4572E" stroke-width="3"/>
+        </g>
+        <g stroke="#FAF5EC" stroke-width="2" opacity="0.85">
+          <path d="M60 60 L120 100 M150 40 L210 80 M230 55 L290 95"/>
+        </g>
+        <g fill="#FAF5EC"><circle cx="60" cy="60" r="4"/><circle cx="150" cy="40" r="4"/><circle cx="230" cy="55" r="4"/></g>
+      </svg>
+      <div class="cap">THREE DNIPRO BRIDGES DAMAGED &mdash; KYIV</div>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="panel red">
+      <div class="kicker">MARKETS &nbsp;•&nbsp; NEW YORK</div>
+      <h3>Wall Street tumbles into a rout</h3>
+      <p>AI shares led a sixth straight day of falls. <b>Nvidia fell 14%</b> after
+      Reuters reported the SEC is probing its accounts, and <b>Anthropic slid 9%</b>
+      a day after its record IPO. Fear gauge VIX jumped a third.</p>
+      <div class="nums">
+        <div class="num"><b>&minus;5.3%</b><span>NASDAQ</span></div>
+        <div class="num"><b>&minus;3.7%</b><span>S&amp;P 500</span></div>
+        <div class="num"><b>&minus;5.1%</b><span>NIKKEI</span></div>
+        <div class="num"><b>+33%</b><span>VIX</span></div>
+      </div>
+    </div>
+    <div class="panel green">
+      <div class="kicker">CLIMATE &nbsp;•&nbsp; ANTALYA</div>
+      <h3>COP31: fossil fuels erased from the deal</h3>
+      <p>On the summit&rsquo;s closing day, the draft deal was cut from 144 paragraphs
+      to 80 &mdash; with <b>every mention of fossil fuels removed</b>, along with the
+      $120bn adaptation-finance target. Talks spilled into overtime; the draft
+      admits warming will pass 1.5&deg;C.</p>
+      <div class="nums">
+        <div class="num"><b>144&rarr;80</b><span>PARAGRAPHS</span></div>
+        <div class="num"><b>0</b><span>FOSSIL-FUEL MENTIONS</span></div>
+        <div class="num"><b>~200</b><span>COUNTRIES</span></div>
+        <div class="num"><b>1.5&deg;C</b><span>WILL BE PASSED</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="world">
+    <h4>AROUND THE WORLD</h4>
+    <div class="grid">
+      <div class="card">
+        <div class="tag">PERU</div>
+        <h5>Quake shakes the Andes</h5>
+        <p>Magnitude 6.7 near Jun&iacute;n at 7:09 p.m., felt in Lima. No immediate casualties.</p>
+      </div>
+      <div class="card">
+        <div class="tag">INDIA</div>
+        <h5>Cyclone Akvan makes landfall</h5>
+        <p>Hits Odisha near Gopalpur, winds to 90 km/h. 300,000 evacuated; no major damage.</p>
+      </div>
+      <div class="card">
+        <div class="tag">BRITAIN &amp; EU</div>
+        <h5>Youth mobility deal agreed</h5>
+        <p>100,000 visas a year each way; food-trade checks end. Tuition fees deferred 6 months.</p>
+      </div>
+      <div class="card">
+        <div class="tag">MYANMAR</div>
+        <h5>Rejects the genocide ruling</h5>
+        <p>A day after the world court&rsquo;s verdict, Myanmar rejects it as sanctions calls grow.</p>
+      </div>
+      <div class="card">
+        <div class="tag">UNITED STATES</div>
+        <h5>Measles nears 6,000 cases</h5>
+        <p>CDC reports 5,838 cases &mdash; the country&rsquo;s worst outbreak in decades.</p>
+      </div>
+      <div class="card">
+        <div class="tag">SPAIN</div>
+        <h5>Feij&oacute;o wins the TV debate</h5>
+        <p>Beats S&aacute;nchez in the polls after their face-off; 10.2m watch. Election next week.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="also"><b>ALSO ON FRIDAY:</b> Hungary lifts its veto on Ukraine&rsquo;s EU talks &middot;
+    Angola pays $180m for 10% of De Beers &middot; Cognition AI in funding talks at a $75bn
+    valuation &middot; Trump: a nuclear arms deal &ldquo;will be hard&rdquo; &middot; Kenya&rsquo;s
+    42-day Ebola-free countdown begins</div>
+    <div class="src">Facts checked against Reuters, AP, BBC and India Meteorological Department reports of Friday 20 November 2026 &nbsp;•&nbsp; make.fun news-image-20261120</div>
+  </div>
+</body>
+</html>
